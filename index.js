@@ -1,10 +1,10 @@
 const telegramBot = require('node-telegram-bot-api');
-const token = '5715595524:AAF1ghMazwqnFVP97IdJYfsHV3lURuHHmy4';
+const dotenv = require('dotenv').config();
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 
 const bot = new telegramBot(token, {polling: true});
-
+console.log(token);
 bot.on('message', (msg) => {
     if(msg.text === '/start') {
         let chatId = msg.chat.id;
